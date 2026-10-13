@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Videos | Rueda Libre</title>
+  <meta name="description" content="Rueda Libre: taller de bicicletas urbanas en Lima. Mantenimiento, ajustes y consejos para rodar seguro.">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Serif+4:ital,wght@0,400;1,400&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="cabecera-fija">
+    <a class="logo" href="index.html">rueda libre</a>
+    <nav aria-label="Menú principal">
+      <ul class="menu">
+        <li><a href="index.html"><i class="fa-regular fa-heart" aria-hidden="true"></i>Inicio</a></li>
+        <li><a href="blog.html"><i class="fa-solid fa-pen" aria-hidden="true"></i>Blog</a></li>
+        <li><a href="galeria.html"><i class="fa-regular fa-image" aria-hidden="true"></i>Galería</a></li>
+        <li><a href="videos.html" class="activo" aria-current="page"><i class="fa-solid fa-video" aria-hidden="true"></i>Videos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2 class="intro">El amor por la bici</h2>
+    <p class="intro">Dos formas de mostrar video en la web: incrustado desde YouTube y con la etiqueta de video propia del navegador.</p>
+
+    <section aria-label="Video de YouTube">
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/O3mzPQnyyOU" title="Tutorial de mantenimiento de bicicleta" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <p class="nota-video">Tutorial completo de mantenimiento de bicicleta, incrustado desde YouTube.</p>
+    </section>
+
+    <section aria-label="Video del taller">
+      <div class="video-box">
+        <video controls preload="metadata">
+          <source src="video/rueda-libre.mp4" type="video/mp4">
+          Tu navegador no admite la etiqueta de video.
+        </video>
+      </div>
+      <p class="nota-video">Video alojado en el propio sitio con la etiqueta &lt;video&gt;.</p>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p>Síguenos en nuestras redes sociales:</p>
+    <nav aria-label="Redes sociales">
+      <ul class="redes">
+        <li><a href="https://x.com/" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a></li>
+        <li><a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+        <li><a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></li>
+      </ul>
+    </nav>
+    <p><small>&copy; 2026 Rueda Libre. Proyecto académico ISIL.</small></p>
+  </footer>
+</body>
+</html>

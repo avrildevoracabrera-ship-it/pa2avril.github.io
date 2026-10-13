@@ -1,0 +1,267 @@
+/* ==========================================================
+   Rueda Libre - Taller de bicicletas urbanas
+   Paleta: tinta #12233A | cámara #1F7A5A | señal #F4C430
+           niebla #E7E5E0 | grafito #3A4250
+   ========================================================== */
+
+:root {
+  --tinta: #12233A;
+  --camara: #1F7A5A;
+  --senal: #F4C430;
+  --niebla: #E7E5E0;
+  --grafito: #3A4250;
+  --titulos: "Bricolage Grotesque", "Segoe UI", Arial, sans-serif;
+  --texto: "Source Serif 4", Georgia, "Times New Roman", serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--niebla);
+  color: var(--grafito);
+  font-family: var(--texto);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+img, video, iframe { max-width: 100%; display: block; }
+
+a { color: var(--camara); transition: color .2s, background-color .2s; }
+a:hover { color: var(--tinta); }
+
+:focus-visible { outline: 3px solid var(--senal); outline-offset: 3px; }
+
+/* ---------- Menú (compartido) ---------- */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .4rem 1.8rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--titulos);
+  font-weight: 600;
+}
+.menu a {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .5rem .2rem;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+}
+.menu a:hover { border-bottom-color: var(--senal); }
+.menu a.activo { border-bottom-color: var(--camara); }
+
+/* ---------- Redes sociales (compartido) ---------- */
+.redes {
+  display: flex;
+  justify-content: center;
+  gap: .9rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.redes a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  background: var(--tinta);
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.15rem;
+  transition: transform .2s, background-color .2s, color .2s;
+}
+.redes a:hover { background: var(--senal); color: var(--tinta); transform: translateY(-4px); }
+
+/* ==========================================================
+   INDEX: portada con imagen de fondo
+   ========================================================== */
+.portada {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  padding: 2rem 1.2rem;
+  text-align: center;
+  color: #fff;
+  background:
+    linear-gradient(rgba(18,35,58,.55), rgba(18,35,58,.8)),
+    url("../img/hero.svg") center / cover no-repeat;
+}
+.portada h1 {
+  margin: 0;
+  font-family: var(--titulos);
+  font-weight: 800;
+  font-size: clamp(3rem, 11vw, 8rem);
+  line-height: .95;
+  letter-spacing: -.03em;
+}
+.portada .eslogan {
+  margin: 0;
+  max-width: 34ch;
+  font-size: clamp(1.1rem, 2.4vw, 1.5rem);
+  font-style: italic;
+}
+.portada .menu a { color: #fff; }
+.portada .menu a:hover { color: var(--senal); }
+.portada .redes a { background: #fff; color: var(--tinta); }
+.portada .redes a:hover { background: var(--senal); }
+
+/* ==========================================================
+   PÁGINAS INTERNAS: cabecera fija
+   ========================================================== */
+.cabecera-fija {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .3rem;
+  padding: .7rem 1rem .2rem;
+  background: rgba(231,229,224,.96);
+  border-bottom: 1px solid rgba(18,35,58,.15);
+}
+.logo {
+  font-family: var(--titulos);
+  font-weight: 800;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  letter-spacing: -.03em;
+  line-height: 1;
+  color: var(--tinta);
+  text-decoration: none;
+}
+.logo:hover { color: var(--camara); }
+.cabecera-fija .menu a { color: var(--tinta); }
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 11rem 1.2rem 3rem; /* espacio para la cabecera fija */
+}
+
+main h2 {
+  font-family: var(--titulos);
+  font-size: clamp(1.6rem, 4vw, 2.3rem);
+  line-height: 1.15;
+  color: var(--tinta);
+  margin: 0;
+}
+
+.pie {
+  padding: 2rem 1rem 2.5rem;
+  text-align: center;
+  border-top: 1px solid rgba(18,35,58,.15);
+}
+.pie p { margin: 0 0 1rem; }
+
+/* ---------- Blog ---------- */
+.banner { width: 100%; height: auto; border-radius: 4px; }
+
+.titulo-blog {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1.5rem 0 1rem;
+}
+.creador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--titulos);
+  font-size: .85rem;
+  text-align: center;
+}
+.creador img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--senal);
+}
+.fecha { font-family: var(--titulos); font-size: .9rem; color: var(--camara); font-weight: 600; }
+
+article p { max-width: 68ch; }
+article { text-align: left; }
+
+.con-imagen {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+.con-imagen img { width: 180px; flex-shrink: 0; border-radius: 4px; }
+.con-imagen p { margin: 0; }
+
+.seguinos { text-align: center; font-family: var(--titulos); font-weight: 600; margin: 2.5rem 0 1rem; }
+
+/* ---------- Galería ---------- */
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem 1.5rem;
+  margin: 2rem 0 3rem;
+}
+.galeria figure { margin: 0; width: 270px; }
+.galeria .foto { overflow: hidden; border-radius: 4px; box-shadow: 4px 5px 10px rgba(18,35,58,.35); }
+.galeria img {
+  width: 100%;
+  height: auto;
+  filter: grayscale(100%);
+  transition: filter .4s, transform .4s;
+}
+.galeria img:hover { filter: grayscale(0); transform: scale(1.12) rotate(-1.5deg); }
+.galeria figcaption { text-align: center; font-style: italic; margin-top: .6rem; color: var(--camara); }
+
+/* ---------- Videos ---------- */
+.video-box {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  margin: 1.5rem auto .5rem;
+  aspect-ratio: 16 / 9;
+  background: var(--tinta);
+  box-shadow: 4px 5px 10px rgba(18,35,58,.4);
+}
+.video-box iframe, .video-box video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.nota-video { max-width: 720px; margin: 0 auto 2rem; font-size: .95rem; text-align: center; }
+.intro { text-align: center; margin: 1rem auto 0; }
+
+/* ---------- Adaptable a celular ---------- */
+@media (max-width: 600px) {
+  main { padding-top: 10rem; }
+  .con-imagen { flex-direction: column; }
+  .con-imagen img { width: 60%; }
+  .menu { gap: .2rem 1rem; font-size: .95rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- Pie de la portada ---------- */
+body.inicio { min-height: 100vh; display: flex; flex-direction: column; }
+body.inicio .portada { flex: 1; min-height: auto; }
+.pie-inicio { background: var(--tinta); color: #cfd6e0; text-align: center; padding: 1rem; }
